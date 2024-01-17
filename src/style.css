@@ -1,0 +1,493 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* --------- BODY ---------- */
+body {
+  margin: 0;
+  padding-bottom: 50px;
+  font-family: 'Arial', sans-serif;
+  /* background-image: url(background.jpg); */
+  background-color: #e1eeec;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: auto;
+  justify-content: center !important;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* --------------------------- */
+
+/* ---------- HEADER ---------- */
+header {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: transform 0.3s ease-in-out;
+}
+
+header.parallax {
+  transform: translateY(-100%);
+}
+
+/* --------------------------- */
+
+/* -------- HEADINGS, PARAGRAPH, ETC. --------- */
+h1,
+h2 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 40px;
+  /* Adjust the font size as desired */
+}
+
+.p {
+  word-wrap: break-word;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  color: #858470;
+}
+
+/* --------------------------- */
+
+/* ------- LOGO -------- */
+.logo {
+  position: relative;
+  display: inline-block;
+}
+
+.logo-img {
+  height: 30px;
+  width: auto;
+}
+
+.logo-text {
+  position: absolute;
+  top: 50%;
+  left: 120%;
+  transform: translate(-30%, -50%);
+  opacity: 0;
+  white-space: nowrap;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  z-index: -1;
+}
+
+.logo:hover .logo-text {
+  transform: translate(10%, -50%);
+  opacity: 1;
+}
+
+.logo.shake {
+  animation: shake 4s;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-2px) rotate(-2deg);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(2px) rotate(2deg);
+  }
+}
+
+/* --------------------------- */
+
+/* -------- NAVIGATION? --------- */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  flex-grow: 1;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* --------------------------- */
+
+/* ---------- INTRO ~ IN EVERY SINGLE PAGE --------- */
+#intro {
+  position: relative;
+}
+
+.background-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.background-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.intro-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  /* Prevent line breaks */
+  overflow: hidden;
+  /* Hide text overflow */
+  text-overflow: ellipsis;
+  /* Add ellipsis for overflow text */
+}
+
+.intro-content p {
+  font-size: 24px;
+  white-space: nowrap;
+  /* Prevent line breaks */
+  overflow: hidden;
+  /* Hide text overflow */
+  text-overflow: ellipsis;
+  /* Add ellipsis for overflow text */
+}
+
+/* --------------------------- */
+
+/* ---------- SECTION ~ CONTAINS MAIN TEXT AND ELEMENTS --------- */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.section-content {
+  padding: 20px;
+  flex-grow: 1;
+  /* Allow the section to grow and fill available space */
+}
+
+.section-content-p {
+  color: #858470;
+}
+
+.release-section-p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 28px;
+}
+
+.album h3 {
+  color: #858470ee;
+  margin-top: 10px;
+}
+
+.release-section h3 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+}
+
+/* Hover effect for embedded videos and images */
+section iframe,
+section img {
+  transition: transform 0.3s ease;
+}
+
+section iframe:hover,
+section img:hover {
+  transform: scale(1.0);
+}
+
+.music-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.album-slider {
+  overflow-x: auto;
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.album-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  width: max-content;
+}
+
+.album {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.album img {
+  width: 200px;
+  height: auto;
+}
+
+.album-slider::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.album-slider::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Hover effect for albums */
+.album:hover {
+  transform: scale(1.1);
+}
+
+.album img:hover,
+a:hover {
+  cursor: pointer;
+  /* Change the cursor to a hand pointer */
+}
+
+/* --------------------------- */
+
+/* -------- SCROLL TO TOP --------- */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+#scrollToTopBtn {
+  opacity: 0.8;
+  transform: rotate(0deg);
+  /* Initially set the button rotation to 0 degrees */
+  transition: transform 0.5s;
+  /* Apply a transition effect to smooth the rotation */
+}
+
+.rotate-animation {
+  animation: rotateAnimation 1s linear forwards;
+}
+
+/* --------------------------- */
+
+/* --------- BUTTON -------- */
+.btn-container {
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #696969;
+}
+
+/* --------------------------- */
+
+/* ---------- SOCIAL MEDIA LINKS --------- */
+.social-media ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  /* Center the icons horizontally */
+  justify-content: space-evenly;
+}
+
+.social-media li {
+  margin-right: 10px;
+}
+
+.social-media li:last-child {
+  margin-right: 0;
+  /* Remove the right margin from the last icon */
+}
+
+.social-media i {
+  font-size: 20px;
+  /* Increase the icon size to 30px */
+}
+
+/* --------------------------- */
+
+/* -------- PROGRESS BAR -------- */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: #ff3366;
+  /* Adjust the color as desired */
+  z-index: 9999;
+  transition: width 0.3s ease;
+}
+
+.animated-element {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-element.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------- */
+
+/* ---------- MOUSE TRAIL --------- */
+#mouse-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.mouse-trail-line {
+  position: absolute;
+  background-color: #ffffff;
+  pointer-events: none;
+  transition: opacity 0.5s ease-out;
+  opacity: 0.8;
+  /* Adjust the opacity as desired */
+  height: 2px;
+  /* Adjust the height of the line */
+  transform-origin: left center;
+  transform: scaleX(0);
+  /* Start with line width at 0 */
+}
+
+/* --------------------------- */
+
+/* -------- FOOTER -------- */
+footer {
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  /* color: white; */
+  color: #858470;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 10px 0px;
+  /* Adjust the padding values to control the height */
+  text-align: center;
+  z-index: 1;
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  /* Ensure the content fills the entire height of the footer */
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-link {
+  color: #858470ee !important;
+  /* so that footer link color remains same after visit*/
+}
+
+footer.parallax {
+  transform: translateY(100%);
+}
+
+footer.hide-footer {
+  display: none;
+}
+
+/* --------------------------- */
